@@ -2,6 +2,8 @@ import streamlit as st
 import random 
 import requests
 import streamlit.components.v1 as components
+import urllib.parse  # To encode text for sharing
+
 
 # title 
 
@@ -50,7 +52,10 @@ def fetch_joke():
 if st.button('Tell me a joke!'):
     joke = fetch_joke()
     st.write(joke)    
+    # Encode joke for URL sharing
+    encoded_joke = urllib.parse.quote(joke)
 
+    
 
 def fetch_customjoke(category):
     url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
@@ -71,25 +76,51 @@ def fetch_customjoke(category):
     except Exception as e:
         return f"Error fetching joke: {e}"
 
+# Function to display share buttons
+def display_share_buttons(joke):
+    encoded_joke = urllib.parse.quote(joke)
+    twitter_url = f"https://twitter.com/intent/tweet?text={encoded_joke} 😂 Found this joke on Cat Laughs!"
+    whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_joke} 😂 Found this joke on Cat Laughs!"
+    facebook_url = f"https://www.facebook.com/sharer/sharer.php?u=https://your-app-link.com&quote={encoded_joke}"
+
+    st.markdown("#### Share your joke with your friends! 🎉")
+    st.markdown(f"""
+        <div style="text-align:center;">
+            <a href="{twitter_url}" target="_blank"><button style="background:#1DA1F2;color:white;padding:10px 15px;border:none;border-radius:5px;margin:5px;">🐦 Twitter</button></a>
+            <a href="{whatsapp_url}" target="_blank"><button style="background:#25D366;color:white;padding:10px 15px;border:none;border-radius:5px;margin:5px;">📱 WhatsApp</button></a>
+            <a href="{facebook_url}" target="_blank"><button style="background:#3b5998;color:white;padding:10px 15px;border:none;border-radius:5px;margin:5px;">📘 Facebook</button></a>
+        </div>
+    """, unsafe_allow_html=True)
+
+# Generate a random joke
+if st.button('Tell me a joke!', key="random_joke"):
+    joke = fetch_joke()
+    st.write(joke)
+    display_share_buttons(joke)
 
 # Categorize Jokes
 st.subheader("Or Choose a Category!")
-if st.button("Programming"):
-    joke = fetch_customjoke("programming")
-    st.write(joke)
-if st.button("Miscellaneous"):
-    joke = fetch_customjoke("misc")
-    st.write(joke)
-if st.button("Dark Humor"):
-    joke = fetch_customjoke("dark")
-    st.write(joke)
-if st.button("Pun!"):
-    joke = fetch_customjoke("pun")
-    st.write(joke)
 
-st.markdown("#### Share your joke with your friends!")
+col1, col2 = st.columns(2)
 
-import streamlit as st
-import streamlit.components.v1 as components
+with col1:
+    if st.button("Programming", key="prog_joke"):
+        joke = fetch_customjoke("Programming")
+        st.write(joke)
+        display_share_buttons(joke)
 
-st.markdown("#### Share this page with your friends!")
+    if st.button("Dark Humor", key="dark_joke"):
+        joke = fetch_customjoke("Dark")
+        st.write(joke)
+        display_share_buttons(joke)
+
+with col2:
+    if st.button("Miscellaneous", key="misc_joke"):
+        joke = fetch_customjoke("Miscellaneous")
+        st.write(joke)
+        display_share_buttons(joke)
+
+    if st.button("Pun!", key="pun_joke"):
+        joke = fetch_customjoke("Pun")
+        st.write(joke)
+        display_share_buttons(joke)

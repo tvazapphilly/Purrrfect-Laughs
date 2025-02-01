@@ -40,8 +40,19 @@ if st.button('Tell me a joke!'):
     joke = fetch_joke()
     st.write(joke)
 
-def fetch_programmingjoke():
-    url = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit"
+
+def fetch_customjoke(category):
+    url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
+    if category == "programming":
+        url = url.replace("Any", "Programming")
+    elif category == "misc":
+        url = url.replace("Any", "Miscellaneous")
+    elif category == "dark":
+        url = url.replace("Any", "Dark")
+    elif category == "pun":
+        url = url.replace("Any", "Pun")
+    else:
+        url = url
     try:
         response = requests.get(url)
         joke = response.json().get("joke", "Oops! No joke found.")
@@ -54,5 +65,14 @@ def fetch_programmingjoke():
 st.header("Optional Customization")
 st.subheader("Choose a Category!")
 if st.button("Programming"):
-    joke = fetch_programmingjoke()
+    joke = fetch_customjoke("programming")
+    st.write(joke)
+if st.button("Miscellaneous"):
+    joke = fetch_customjoke("misc")
+    st.write(joke)
+if st.button("Dark Humor"):
+    joke = fetch_customjoke("dark")
+    st.write(joke)
+if st.button("Pun!"):
+    joke = fetch_customjoke("pun")
     st.write(joke)

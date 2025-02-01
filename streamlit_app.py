@@ -8,7 +8,7 @@ st.title("Cat Laughs!")
 st.write(
     "A random joke generator for your enjoyment! "
 )
-st.image("cat.webp")
+st.image("cat-cats.gif")
 
 def fetch_joke():
     url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"

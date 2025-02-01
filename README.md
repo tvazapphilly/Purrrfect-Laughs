@@ -1,4 +1,4 @@
-# 🐱 Cat Laughs - Joke Generator
+# 🐱 Purrrfect Jokes - Joke Generator
 
 Welcome to **Cat Laughs!** 🎉 A fun, random joke generator featuring a **cat-themed** interface. Enjoy endless jokes and share them with friends!
 

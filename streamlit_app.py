@@ -8,7 +8,7 @@ import urllib.parse  # To encode text for sharing
 # title 
 
 st.markdown(
-    "<h1 style='font-size:48px; font-weight:bold; color:#4c2b75; text-align:center; padding-top:50px;'>Cat Laughs!🐱</h1>", 
+    "<h1 style='font-size:48px; font-weight:bold; color:#4c2b75; text-align:center; padding-top:50px;'>Purrrfect Jokes🐱</h1>", 
     unsafe_allow_html=True
 )
 
@@ -70,8 +70,8 @@ def fetch_customjoke(category):
 # Function to display share buttons
 def display_share_buttons(joke):
     encoded_joke = urllib.parse.quote(joke)
-    twitter_url = f"https://twitter.com/intent/tweet?text={encoded_joke} 😂 Found this joke on Cat Laughs!"
-    whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_joke} 😂 Found this joke on Cat Laughs!"
+    twitter_url = f"https://twitter.com/intent/tweet?text={encoded_joke} 😂 Found this joke on Purrrfect Jokes!"
+    whatsapp_url = f"https://api.whatsapp.com/send?text={encoded_joke} 😂 Found this joke on Purrrfect Jokes!"
     facebook_url = f"https://www.facebook.com/sharer/sharer.php?u=https://your-app-link.com&quote={encoded_joke}"
 
     st.markdown("#### Share your joke with your friends! 🎉")

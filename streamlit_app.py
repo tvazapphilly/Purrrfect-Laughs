@@ -1,10 +1,20 @@
 import streamlit as st
 import requests
 
-# Set title and description
+# title 
 st.title("Cat Laughs!")
-st.write("A random joke generator for your enjoyment!")
-st.image("cat.webp")
+# site description
+st.write(
+    "A random joke generator for your enjoyment! "
+)
+st.image("cat-cats.gif")
+
+primaryColor = '#7792E3'
+backgroundColor = '#E6E6FA'  # Light purple color
+secondaryBackgroundColor = '#ffffff'
+textColor = '#333333'
+font = "sans serif"
+
 
 # Fetch joke function (without caching)
 def fetch_joke():
@@ -15,17 +25,6 @@ def fetch_joke():
         return joke
     except Exception as e:
         return f"Error fetching joke: {e}"
-
-# Center the button using simple HTML
-st.markdown("""
-    <style>
-        .center-button {
-            display: flex;
-            justify-content: center;
-        }
-    </style>
-""", unsafe_allow_html=True)
-
 
 # Streamlit app
 if st.button('Tell me a joke!'):

@@ -16,6 +16,21 @@ def fetch_joke():
     except Exception as e:
         return f"Error fetching joke: {e}"
 
+# Center the button using simple HTML
+st.markdown("""
+    <style>
+        .center-button {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# Create a div for the button to be centered
+with st.container():
+    st.markdown('<div class="center-button"><button>Tell me a joke!</button></div>', unsafe_allow_html=True)
+
+
 # Streamlit app
 if st.button('Tell me a joke!'):
     joke = fetch_joke()

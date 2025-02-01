@@ -1,32 +1,33 @@
 import streamlit as st
-import random 
+import requests
 
-# title 
+# Set title and description
 st.title("Cat Laughs!")
-# site description
-st.write(
-    "A random joke generator for your enjoyment! "
-)
+st.write("A random joke generator for your enjoyment!")
 st.image("cat.webp")
 
-### Copilot 
-# List of jokes
-jokes = [
-    "Why don't scientists trust atoms? Because they make up everything!",
-    "Why did the math book look sad? Because it had too many problems.",
-    "Why do we never tell secrets on a farm? Because the potatoes have eyes and the corn has ears!",
-    "Why did the scarecrow win an award? Because he was outstanding in his field!",
-    "What do you call fake spaghetti? An impasta!"
-]
+# Fetch joke function (without caching)
+def fetch_joke():
+    url = "https://v2.jokeapi.dev/joke/Any?type=single"
+    try:
+        response = requests.get(url)
+        joke = response.json().get("joke", "Oops! No joke found.")
+        return joke
+    except Exception as e:
+        return f"Error fetching joke: {e}"
 
-# Function to get a random joke
-def get_random_joke():
-    return random.choice(jokes)
+# Center the button using simple HTML
+st.markdown("""
+    <style>
+        .center-button {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
 
 # Streamlit app
-st.title('Random Joke Generator')
-
 if st.button('Tell me a joke!'):
-    joke = get_random_joke()
+    joke = fetch_joke()
     st.write(joke)
-

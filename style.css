@@ -6,10 +6,10 @@ body {
 }
 
 .stButton {
-    background-color: #e4b0e3;
-    color: white;
+    background-color: #fcfafc;
+    color: rgb(119, 16, 16);
 }
 
 .stButton:hover {
-    background-color: #ffffff;
+    background-color: #f0f1f6;
 }

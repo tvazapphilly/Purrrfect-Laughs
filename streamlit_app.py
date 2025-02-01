@@ -35,7 +35,7 @@ def fetch_joke():
     except Exception as e:
         return f"Error fetching joke: {e}"
 
-# Streamlit app
+# random joke button
 if st.button('Tell me a joke!'):
     joke = fetch_joke()
     st.write(joke)

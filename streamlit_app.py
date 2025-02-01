@@ -10,6 +10,11 @@ st.write(
 )
 st.image("cat-cats.gif")
 
+# Apply custom CSS from an external file
+with open("styles.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+
 def fetch_joke():
     url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
 
@@ -72,5 +77,5 @@ if st.button("Dark Humor"):
 if st.button("Pun!"):
     joke = fetch_customjoke("pun")
     st.write(joke)
-
-
+    joke = fetch_programmingjoke()
+    st.write(joke)

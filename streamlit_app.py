@@ -1,12 +1,15 @@
 import streamlit as st
 import random 
 
+# title 
 st.title("Cat Laughs!")
+# site description
 st.write(
     "A random joke generator for your enjoyment! "
 )
 st.image("cat.webp")
-###Copilot 
+
+### Copilot 
 # List of jokes
 jokes = [
     "Why don't scientists trust atoms? Because they make up everything!",

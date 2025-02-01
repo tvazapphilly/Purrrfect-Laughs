@@ -96,22 +96,22 @@ col1, col2 = st.columns(2)
 
 with col1:
     if st.button("Programming", key="prog_joke"):
-        joke = fetch_customjoke("Programming")
+        joke = fetch_customjoke("programming")
         st.write(joke)
         display_share_buttons(joke)
 
     if st.button("Dark Humor", key="dark_joke"):
-        joke = fetch_customjoke("Dark")
+        joke = fetch_customjoke("dark")
         st.write(joke)
         display_share_buttons(joke)
 
 with col2:
     if st.button("Miscellaneous", key="misc_joke"):
-        joke = fetch_customjoke("Miscellaneous")
+        joke = fetch_customjoke("misc")
         st.write(joke)
         display_share_buttons(joke)
 
     if st.button("Pun!", key="pun_joke"):
-        joke = fetch_customjoke("Pun")
+        joke = fetch_customjoke("pun")
         st.write(joke)
         display_share_buttons(joke)

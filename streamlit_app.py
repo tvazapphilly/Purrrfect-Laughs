@@ -2,6 +2,8 @@ import streamlit as st
 import random 
 import requests
 import streamlit.components.v1 as components
+import base64
+
 # title 
 
 st.markdown(
@@ -37,7 +39,7 @@ font = "sans serif"
 
 # Fetch joke function (without caching)
 def fetch_joke():
-    url = "https://v2.jokeapi.dev/joke/Any?type=single"
+    url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
     try:
         response = requests.get(url)
         joke = response.json().get("joke", "Oops! No joke found.")
@@ -48,7 +50,7 @@ def fetch_joke():
 # random joke button
 if st.button('Tell me a joke!'):
     joke = fetch_joke()
-    st.write(joke)
+    st.write(joke)    
 
 
 def fetch_customjoke(category):

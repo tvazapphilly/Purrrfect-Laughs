@@ -88,3 +88,8 @@ if st.button("Pun!"):
     st.write(joke)
 
 st.markdown("#### Share your joke with your friends!")
+
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.markdown("#### Share this page with your friends!")

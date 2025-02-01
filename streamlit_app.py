@@ -46,16 +46,7 @@ def fetch_joke():
         joke = response.json().get("joke", "Oops! No joke found.")
         return joke
     except Exception as e:
-        return f"Error fetching joke: {e}"
-
-# random joke button
-if st.button('Tell me a joke!'):
-    joke = fetch_joke()
-    st.write(joke)    
-    # Encode joke for URL sharing
-    encoded_joke = urllib.parse.quote(joke)
-
-    
+        return f"Error fetching joke: {e}"    
 
 def fetch_customjoke(category):
     url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"

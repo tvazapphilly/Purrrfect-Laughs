@@ -1,0 +1,15 @@
+/* styles.css */
+body {
+    background-color: #494993;
+    color: #333333;
+    font-family: sans-serif;
+}
+
+.stButton {
+    background-color: #e4b0e3;
+    color: white;
+}
+
+.stButton:hover {
+    background-color: #ffffff;
+}

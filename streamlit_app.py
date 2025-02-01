@@ -1,7 +1,7 @@
 import streamlit as st
 import random 
 import requests
-
+import streamlit.components.v1 as components
 # title 
 
 st.markdown(
@@ -87,22 +87,4 @@ if st.button("Pun!"):
     joke = fetch_customjoke("pun")
     st.write(joke)
 
-import streamlit as st
-import streamlit.components.v1 as components
-
 st.markdown("#### Share your joke with your friends!")
-components.html("""
-<button onclick="copyURL()">Share URL</button>
-<script>
-function copyURL() {
-    const dummy = document.createElement('input');
-    const text = window.location.href;
-    document.body.appendChild(dummy);
-    dummy.value = text;
-    dummy.select();
-    document.execCommand('copy');
-    document.body.removeChild(dummy);
-    alert('URL copied to clipboard: ' + text);
-}
-</script>
-""", height=50)

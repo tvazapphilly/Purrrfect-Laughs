@@ -12,7 +12,7 @@ st.image("cat-cats.gif")
 
 def fetch_joke():
     url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
-=======
+
 primaryColor = '#7792E3'
 backgroundColor = '#E6E6FA'  # Light purple color
 secondaryBackgroundColor = '#ffffff'

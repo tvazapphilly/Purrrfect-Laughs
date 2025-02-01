@@ -20,3 +20,7 @@ def fetch_joke():
 if st.button('Tell me a joke!'):
     joke = fetch_joke()
     st.write(joke)
+
+# Categorize Jokes
+st.header("Optional Customization")
+st.subheader("Choose a Category")

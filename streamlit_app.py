@@ -12,6 +12,17 @@ st.image("cat-cats.gif")
 
 def fetch_joke():
     url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single"
+=======
+primaryColor = '#7792E3'
+backgroundColor = '#E6E6FA'  # Light purple color
+secondaryBackgroundColor = '#ffffff'
+textColor = '#333333'
+font = "sans serif"
+
+
+# Fetch joke function (without caching)
+def fetch_joke():
+    url = "https://v2.jokeapi.dev/joke/Any?type=single"
     try:
         response = requests.get(url)
         joke = response.json().get("joke", "Oops! No joke found.")
@@ -40,6 +51,4 @@ st.subheader("Choose a Category!")
 if st.button("Programming"):
     joke = fetch_programmingjoke()
     st.write(joke)
-
-
 

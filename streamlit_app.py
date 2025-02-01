@@ -91,8 +91,18 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 st.markdown("#### Share your joke with your friends!")
-# Twitter share button
 components.html("""
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Check out this awesome Streamlit app!" data-url="https://your_streamlit_app_url" data-show-count="false" data-size="large">Tweet</a>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<button onclick="copyURL()">Share URL</button>
+<script>
+function copyURL() {
+    const dummy = document.createElement('input');
+    const text = window.location.href;
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+    alert('URL copied to clipboard: ' + text);
+}
+</script>
 """, height=50)

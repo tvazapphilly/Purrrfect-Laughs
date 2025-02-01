@@ -76,3 +76,13 @@ if st.button("Dark Humor"):
 if st.button("Pun!"):
     joke = fetch_customjoke("pun")
     st.write(joke)
+
+import streamlit as st
+import streamlit.components.v1 as components
+
+st.markdown("#### Share your joke with your friends!")
+# Twitter share button
+components.html("""
+<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text="Check out this awesome Streamlit app!" data-url="https://your_streamlit_app_url" data-show-count="false" data-size="large">Tweet</a>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+""", height=50)

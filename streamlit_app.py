@@ -3,12 +3,22 @@ import random
 import requests
 
 # title 
-st.title("Cat Laughs!")
-# site description
-st.write(
-    "A random joke generator for your enjoyment! "
+
+st.markdown(
+    "<h1 style='font-size:48px; font-weight:bold; color:#4c2b75; text-align:center; padding-top:50px;'>Cat Laughs!🐱</h1>", 
+    unsafe_allow_html=True
 )
+
+# site description
+
+st.markdown(
+    "<p style='font-size:35px; font-weight:bold; color:#4c2b75; text-align:center; padding-top:50px; margin-bottom:30px;'>A random joke generator for your enjoyment!</p>", 
+    unsafe_allow_html=True
+)
+
 st.image("cat-cats.gif")
+
+
 
 # Apply custom CSS from an external file
 with open("style.css") as f:

@@ -46,8 +46,7 @@ def fetch_customjoke(category):
         url = url.replace("Any", "Dark")
     elif category == "pun":
         url = url.replace("Any", "Pun")
-    elif category == "spooky":
-        url = url.replace("Any", "Spooky")
+    
     else:
         url = url
     try:
@@ -73,7 +72,5 @@ if st.button("Dark Humor"):
 if st.button("Pun!"):
     joke = fetch_customjoke("pun")
     st.write(joke)
-if st.button("Spooky Humor"):
-    joke = fetch_customjoke("spooky")
-    st.write(joke)
+
 

@@ -1,19 +1,11 @@
-# 🎈 Read me
+# 🐱 Cat Laughs - Joke Generator
 
-A cat joke generator!
+Welcome to **Cat Laughs!** 🎉 A fun, random joke generator featuring a **cat-themed** interface. Enjoy endless jokes and share them with friends!
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## 🎈 Features
+- 🐾 Generates random jokes from an API.
+- 🎭 Choose from different joke categories (Programming, Dark Humor, Puns, etc.).
+- 📱 Share jokes easily on Twitter and WhatsApp.
+- 🎨 Custom styling with a playful cat theme.
 
-### How to run it on your own machine
 
-1. Install the requirements
-
-   ```
-   $ pip install -r requirements.txt
-   ```
-
-2. Run the app
-
-   ```
-   $ streamlit run streamlit_app.py
-   ```

@@ -6,7 +6,7 @@
 
 [data-testid="stSidebar"] {
     background-color: #3a3a6e !important;  /* Optional: Change sidebar background */
-    color: rgb(56, 20, 119)37, 83, 83) !important;
+    color: rgb(56, 20, 119) !important;
 }
 
 div.stButton > button {

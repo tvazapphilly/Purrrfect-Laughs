@@ -77,9 +77,3 @@ if st.button("Spooky Humor"):
     joke = fetch_customjoke("spooky")
     st.write(joke)
 
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> 163a6ba1c6b38d6235192dcd76a3d1f0db564625

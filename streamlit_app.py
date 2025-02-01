@@ -2,7 +2,6 @@ import streamlit as st
 import random 
 import requests
 import streamlit.components.v1 as components
-import base64
 
 # title 
 
@@ -74,8 +73,7 @@ def fetch_customjoke(category):
 
 
 # Categorize Jokes
-st.header("Optional Customization")
-st.subheader("Choose a Category!")
+st.subheader("Or Choose a Category!")
 if st.button("Programming"):
     joke = fetch_customjoke("programming")
     st.write(joke)

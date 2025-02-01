@@ -1,15 +1,22 @@
 /* styles.css */
-body {
-    background-color: #494993;
-    color: #333333;
-    font-family: sans-serif;
+[data-testid="stAppViewContainer"] {
+    background-color: #CBC3E3 !important;  /* Ensures the whole app background changes */
+    color: #40245a !important;
 }
 
-.stButton {
-    background-color: #fcfafc;
-    color: rgb(119, 16, 16);
+[data-testid="stSidebar"] {
+    background-color: #3a3a6e !important;  /* Optional: Change sidebar background */
+    color: rgb(56, 20, 119)37, 83, 83) !important;
 }
 
-.stButton:hover {
-    background-color: #f0f1f6;
+div.stButton > button {
+    background-color: #ffffff !important;  
+    color: rgb(178, 167, 228) !important;  
+    border-radius: 5px;  
+    border: 2px solid #ffffff;
+}
+
+div.stButton > button:hover {
+    background-color: #4c2b75 !important;
+    color: white !important;
 }
